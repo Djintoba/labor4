@@ -1,0 +1,209 @@
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\title{Exercises LaTeX - Behavior of floats and references}
+\author{NONOGA Djintoba\\ Student ID: 1032249064}
+\date{\today}
+\maketitle
+
+\section{Creating an image}
+This picture
+\begin{center}
+    \includegraphics[height=3cm]{example-image}
+\end{center}
+is an imported PDF.
+
+\section{Exploring image sizing keys}
+\subsection{Images with different sizes}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{example-image-b}
+\caption{Image with width=0.5\textbackslash textwidth}
+\label{fig:with_text}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[height=0.5\textheight]{example-image-c}
+\caption{Image with height=0.5\textbackslash textheight}
+\label{fig:height}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.3]{example-image}
+\caption{Image with scale=0.3}
+\label{fig:scale}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[angle=50]{example-image} 
+\caption{Image with 50 degree rotation}
+\label{fig:angle}
+\end{figure}
+
+\subsection{Comparison \textbackslash textwidth and \textbackslash linewidth}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image-a}
+\caption{Using of \textbackslash textwidth (80\%)}
+\label{fig:textwidth}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{example-image-b}
+\caption{Using of \textbackslash linewidth (80\%)}
+\label{fig:linewidth}
+\end{figure}
+
+\lipsum[1-3]
+
+\section{Testing of position specifiers}
+
+\lipsum[4-6]
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\linewidth]{example-image-a}
+\caption{Figure positioned at the top (t)}
+\label{fig:top}
+\end{figure}
+
+\begin{figure}[b]
+\centering
+\includegraphics[width=0.7\linewidth]{example-image-c}
+\caption{Figure positioned at the bottom}
+\label{fig:bottom}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\linewidth]{example-image-c}
+\caption{Figure positioned here (h)}
+\label{fig:here}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=0.8\textwidth]{example-image}
+\caption{Figure on dedicated page (p)}
+\label{fig:page}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.6\linewidth]{example-image-a}
+\caption{Figure with forced placement (!ht)}
+\label{fig:force}
+\end{figure}
+
+\lipsum[7-15]
+
+\section{Sections and equations}
+\subsection{Sections and subsections}
+\subsection{First section}\label{sec:first}
+This section has a label \texttt{sec:first}.
+
+\subsubsection{Subsection example}\label{subsec:example}
+This subsection has a label \texttt{subsec:example}.
+
+\subsection{Numbered list}
+\begin{enumerate}
+\item First item\label{item:first}
+\item Second item\label{item:second}
+\item Third item\label{item:third}
+\end{enumerate}
+
+\subsection{Equations with labels}
+
+\begin{equation}\label{eq:labelone}
+e^{i\pi}+1=0
+\end{equation}
+
+\begin{equation}\label{eq:labeltwo}
+a^2 + b^2 = c^2
+\end{equation}
+
+\section{Labels testing with float}
+
+\subsection{Label before caption}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{example-image-b}
+\caption{Figure with label defined before the legend}
+\label{fig:before}
+\end{figure}
+
+\subsection{Label after caption}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\linewidth]{example-image-c}
+\caption{Figure with label defined after the legend}
+\label{fig:after}
+\end{figure}
+
+\section{Personal image}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\linewidth]{mon_image.png}
+\caption{Personal image}
+\label{fig:perso}
+\end{figure}
+
+\section{Cross references}
+\subsection{Figure references}
+Figure with \textbackslash textwidth: \ref{fig:textwidth}\\
+Figure with \textbackslash linewidth: \ref{fig:linewidth}\\
+Figure at top: \ref{fig:top}\\
+Figure at bottom: \ref{fig:bottom}
+
+\subsection{Sections references}
+Section: \ref{sec:first}\\
+Subsection: \ref{subsec:example}
+
+\subsection{Equations references}
+Equation 1: \ref{eq:labelone}\\
+Equation 2: \ref{eq:labeltwo}
+
+\subsection{Items references}
+Item 1: \ref{item:first}\\
+Item 2: \ref{item:second}\\
+Item 3: \ref{item:third}
+
+\section{Conclusion}
+
+\subsection{Observed behavior}
+
+\begin{itemize}
+\item \texttt{\textbackslash textwidth} vs \texttt{\textbackslash linewidth}: In two-column mode, \texttt{\textbackslash linewidth} corresponds to the width of the current column, while \texttt{\textbackslash textwidth} corresponds to the total width of the page.
+
+\item Position specifiers:
+  \begin{itemize}
+  \item \texttt{h}: Here if possible
+  \item \texttt{t}: At the top of the page
+  \item \texttt{b}: At the bottom of the page
+  \item \texttt{p}: Dedicated page
+  \item \texttt{!}: Force placement
+  \end{itemize}
+
+\item Labels and references: 2 compilations are necessary for the references to be correct.
+
+\item Label before \texttt{\textbackslash caption}: The reference points to the section rather than the figure.
+
+\item Label after \texttt{\textbackslash end\{equation\}}: The reference is not working properly.
+\end{itemize}
+
+\lipsum[16-20]
+
+\end{document}

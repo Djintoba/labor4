@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="NONOGA Djintoba Student ID: 1032249064" />
+  <meta name="dcterms.date" content="2026-01-03" />
+  <title>Exercises LaTeX - Behavior of floats and references</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Exercises LaTeX - Behavior of floats and
+references</h1>
+<p class="author">NONOGA Djintoba<br />
+Student ID: 1032249064</p>
+<p class="date">2026-01-03</p>
+</header>
+<h1 id="creating-an-image">Creating an image</h1>
+<p>This picture</p>
+<div class="center">
+<p><img src="example-image" style="height:3cm" alt="image" /></p>
+</div>
+<p>is an imported PDF.</p>
+<h1 id="exploring-image-sizing-keys">Exploring image sizing keys</h1>
+<h2 id="images-with-different-sizes">Images with different sizes</h2>
+<figure id="fig:with_text" data-latex-placement="ht">
+<img src="example-image-b" style="width:50.0%" />
+<figcaption>Image with width=0.5\textwidth</figcaption>
+</figure>
+<figure id="fig:height" data-latex-placement="ht">
+<img src="example-image-c" style="height:50.0%" />
+<figcaption>Image with height=0.5\textheight</figcaption>
+</figure>
+<figure id="fig:scale" data-latex-placement="ht">
+<img src="example-image" />
+<figcaption>Image with scale=0.3</figcaption>
+</figure>
+<figure id="fig:angle" data-latex-placement="ht">
+<img src="example-image" />
+<figcaption>Image with 50 degree rotation</figcaption>
+</figure>
+<h2 id="comparison-textwidth-and-linewidth">Comparison \textwidth and
+\linewidth</h2>
+<figure id="fig:textwidth" data-latex-placement="ht">
+<img src="example-image-a" style="width:80.0%" />
+<figcaption>Using of \textwidth (80%)</figcaption>
+</figure>
+<figure id="fig:linewidth" data-latex-placement="ht">
+<img src="example-image-b" style="width:80.0%" />
+<figcaption>Using of \linewidth (80%)</figcaption>
+</figure>
+<h1 id="testing-of-position-specifiers">Testing of position
+specifiers</h1>
+<figure id="fig:top" data-latex-placement="t">
+<img src="example-image-a" style="width:70.0%" />
+<figcaption>Figure positioned at the top (t)</figcaption>
+</figure>
+<figure id="fig:bottom" data-latex-placement="b">
+<img src="example-image-c" style="width:70.0%" />
+<figcaption>Figure positioned at the bottom</figcaption>
+</figure>
+<figure id="fig:here" data-latex-placement="ht">
+<img src="example-image-c" style="width:70.0%" />
+<figcaption>Figure positioned here (h)</figcaption>
+</figure>
+<figure id="fig:page" data-latex-placement="p">
+<img src="example-image" style="width:80.0%" />
+<figcaption>Figure on dedicated page (p)</figcaption>
+</figure>
+<figure id="fig:force" data-latex-placement="!ht">
+<img src="example-image-a" style="width:60.0%" />
+<figcaption>Figure with forced placement (!ht)</figcaption>
+</figure>
+<h1 id="sections-and-equations">Sections and equations</h1>
+<h2 id="sections-and-subsections">Sections and subsections</h2>
+<h2 id="sec:first">First section</h2>
+<p>This section has a label <code>sec:first</code>.</p>
+<h3 id="subsec:example">Subsection example</h3>
+<p>This subsection has a label <code>subsec:example</code>.</p>
+<h2 id="numbered-list">Numbered list</h2>
+<ol>
+<li><p>First item<span id="item:first"
+data-label="item:first"></span></p></li>
+<li><p>Second item<span id="item:second"
+data-label="item:second"></span></p></li>
+<li><p>Third item<span id="item:third"
+data-label="item:third"></span></p></li>
+</ol>
+<h2 id="equations-with-labels">Equations with labels</h2>
+<p><span class="math display">\[\begin{equation}
+\label{eq:labelone}
+e^{i\pi}+1=0
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\label{eq:labeltwo}
+a^2 + b^2 = c^2
+\end{equation}\]</span></p>
+<h1 id="labels-testing-with-float">Labels testing with float</h1>
+<h2 id="label-before-caption">Label before caption</h2>
+<figure id="fig:before" data-latex-placement="ht">
+<img src="example-image-b" style="width:60.0%" />
+<figcaption>Figure with label defined before the legend</figcaption>
+</figure>
+<h2 id="label-after-caption">Label after caption</h2>
+<figure id="fig:after" data-latex-placement="ht">
+<img src="example-image-c" style="width:60.0%" />
+<figcaption>Figure with label defined after the legend</figcaption>
+</figure>
+<h1 id="personal-image">Personal image</h1>
+<figure id="fig:perso" data-latex-placement="ht">
+<img src="mon_image.png" style="width:80.0%" />
+<figcaption>Personal image</figcaption>
+</figure>
+<h1 id="cross-references">Cross references</h1>
+<h2 id="figure-references">Figure references</h2>
+<p>Figure with \textwidth: <a href="#fig:textwidth"
+data-reference-type="ref" data-reference="fig:textwidth">5</a><br />
+Figure with \linewidth: <a href="#fig:linewidth"
+data-reference-type="ref" data-reference="fig:linewidth">6</a><br />
+Figure at top: <a href="#fig:top" data-reference-type="ref"
+data-reference="fig:top">7</a><br />
+Figure at bottom: <a href="#fig:bottom" data-reference-type="ref"
+data-reference="fig:bottom">8</a></p>
+<h2 id="sections-references">Sections references</h2>
+<p>Section: <a href="#sec:first" data-reference-type="ref"
+data-reference="sec:first">4.2</a><br />
+Subsection: <a href="#subsec:example" data-reference-type="ref"
+data-reference="subsec:example">4.2.1</a></p>
+<h2 id="equations-references">Equations references</h2>
+<p>Equation 1: <a href="#eq:labelone" data-reference-type="ref"
+data-reference="eq:labelone">[eq:labelone]</a><br />
+Equation 2: <a href="#eq:labeltwo" data-reference-type="ref"
+data-reference="eq:labeltwo">[eq:labeltwo]</a></p>
+<h2 id="items-references">Items references</h2>
+<p>Item 1: <a href="#item:first" data-reference-type="ref"
+data-reference="item:first">[item:first]</a><br />
+Item 2: <a href="#item:second" data-reference-type="ref"
+data-reference="item:second">[item:second]</a><br />
+Item 3: <a href="#item:third" data-reference-type="ref"
+data-reference="item:third">[item:third]</a></p>
+<h1 id="conclusion">Conclusion</h1>
+<h2 id="observed-behavior">Observed behavior</h2>
+<ul>
+<li><p><code>\textwidth</code> vs <code>\linewidth</code>: In two-column
+mode, <code>\linewidth</code> corresponds to the width of the current
+column, while <code>\textwidth</code> corresponds to the total width of
+the page.</p></li>
+<li><p>Position specifiers:</p>
+<ul>
+<li><p><code>h</code>: Here if possible</p></li>
+<li><p><code>t</code>: At the top of the page</p></li>
+<li><p><code>b</code>: At the bottom of the page</p></li>
+<li><p><code>p</code>: Dedicated page</p></li>
+<li><p><code>!</code>: Force placement</p></li>
+</ul></li>
+<li><p>Labels and references: 2 compilations are necessary for the
+references to be correct.</p></li>
+<li><p>Label before <code>\caption</code>: The reference points to the
+section rather than the figure.</p></li>
+<li><p>Label after <code>\end{equation}</code>: The reference is not
+working properly.</p></li>
+</ul>
+</body>
+</html>
